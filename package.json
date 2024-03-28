@@ -5,7 +5,8 @@
     "dev": "vite",
     "build": "vue-tsc --noEmit && vite build",
     "preview": "vite preview",
-    "lint": "eslint . --fix"
+    "lint": "eslint . --fix",
+    "serve": "nodemon server.js"
   },
   "dependencies": {
     "@mdi/font": "7.4.47",
@@ -30,6 +31,7 @@
     "eslint-plugin-node": "^11.1.0",
     "eslint-plugin-promise": "^6.1.1",
     "eslint-plugin-vue": "^9.24.0",
+    "nodemon": "^3.1.0",
     "pinia": "^2.1.7",
     "sass": "^1.72.0",
     "typescript": "^5.4.3",
