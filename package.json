@@ -1,5 +1,6 @@
 {
   "name": "vuetify-project-template",
+  "type": "module",
   "version": "0.0.0",
   "scripts": {
     "dev": "vite",
@@ -14,6 +15,8 @@
     "core-js": "^3.36.1",
     "cors": "^2.8.5",
     "express": "^4.19.2",
+    "mongodb": "^6.5.0",
+    "mongoose": "^8.2.4",
     "roboto-fontface": "^0.10.0",
     "vue": "^3.4.21",
     "vuetify": "^3.5.13"
