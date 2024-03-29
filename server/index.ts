@@ -2,7 +2,7 @@ import process from 'node:process'
 import express from 'express'
 import mongoose from 'mongoose'
 import cors from 'cors'
-import todoRoute from './routes/todo.routes.js'
+import todoRoute from './routes/todo.routes.ts'
 
 const app = express()
 const port = 8080
@@ -21,11 +21,11 @@ app.use('/todos', todoRoute)
 
 const connectionString = process.env.DB_CONNECTION_STRING
 
-mongoose.connect(connectionString)
+mongoose.connect(connectionString!)
   .then(() => {
     console.log('Connected to Database!')
     app.listen(port, () => {
-      console.log(`Example app listening on port ${port}!`)
+      console.log(`Server listening on port ${port}!`)
     })
   })
   .catch(err => console.error(err))

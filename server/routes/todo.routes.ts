@@ -1,5 +1,5 @@
 import express from 'express'
-import { createTodo, deleteTodo, getTodo, getTodos, updateTodo } from '../controllers/todo.controller.js'
+import { createTodo, deleteTodo, getTodo, getTodos, updateTodo } from '../controllers/todo.controller.ts'
 
 const router = express.Router()
 

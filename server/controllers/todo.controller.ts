@@ -1,7 +1,8 @@
-import ToDo from '../model/ToDo.js'
+import type { Request, Response } from 'express'
+import { ToDo } from '../model/ToDo.ts'
 
 // Get all Todos
-async function getTodos(req, res) {
+async function getTodos(req: Request, res: Response) {
   try {
     const todos = await ToDo.find()
     res.status(200).json(todos)
@@ -12,7 +13,7 @@ async function getTodos(req, res) {
 }
 
 // Get a single Todo
-async function getTodo(req, res) {
+async function getTodo(req: Request, res: Response) {
   try {
     const { id } = req.params
     const todo = await ToDo.findById(id)
@@ -24,7 +25,7 @@ async function getTodo(req, res) {
 }
 
 // Create a new Todo
-async function createTodo(res, req) {
+async function createTodo(req: Request, res: Response) {
   try {
     const todo = await ToDo.create({
       title: req.body.title,
@@ -38,7 +39,7 @@ async function createTodo(res, req) {
 }
 
 // Update a Todo
-async function updateTodo(req, res) {
+async function updateTodo(req: Request, res: Response) {
   try {
     const { id } = req.params
     const todo = await ToDo.findByIdAndUpdate(id, req.body)
@@ -55,7 +56,7 @@ async function updateTodo(req, res) {
 }
 
 // Delete a Todo
-async function deleteTodo(req, res) {
+async function deleteTodo(req: Request, res: Response) {
   try {
     const { id } = req.params
     const todo = await ToDo.findByIdAndDelete(id)
