@@ -7,7 +7,7 @@
     "build": "vue-tsc --noEmit && vite build",
     "preview": "vite preview",
     "lint": "eslint . --fix",
-    "serve": "nodemon index.js"
+    "serve": "nodemon server/index.js"
   },
   "dependencies": {
     "@mdi/font": "7.4.47",
