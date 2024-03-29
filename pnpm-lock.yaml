@@ -8,9 +8,6 @@ dependencies:
   '@mdi/font':
     specifier: 7.4.47
     version: 7.4.47
-  body-parser:
-    specifier: ^1.20.2
-    version: 1.20.2
   core-js:
     specifier: ^3.36.1
     version: 3.36.1
