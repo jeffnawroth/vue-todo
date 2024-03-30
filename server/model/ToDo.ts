@@ -1,14 +1,14 @@
-import type { Types } from 'mongoose'
+import type { Document } from 'mongoose'
 import { Schema, model } from 'mongoose'
 
-interface IToDo {
-  id: Types.ObjectId
+export interface IToDo {
   title: string
   completed: boolean
 }
 
+export interface IToDoDocument extends IToDo, Document {}
+
 const ToDoSchema = new Schema<IToDo>({
-  id: Schema.Types.ObjectId,
   title: {
     type: String,
     required: true,
@@ -19,5 +19,4 @@ const ToDoSchema = new Schema<IToDo>({
   },
 })
 
-const ToDo = model<IToDo>('ToDo', ToDoSchema)
-export { IToDo, ToDo }
+export const ToDo = model<IToDo>('ToDo', ToDoSchema)

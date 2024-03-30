@@ -24,6 +24,11 @@ export default defineConfig({
         {
           'vue-router/auto': ['useRoute', 'useRouter'],
         },
+        'pinia',
+        '@vueuse/core',
+      ],
+      dirs: [
+        'src/stores',
       ],
       dts: 'src/auto-imports.d.ts',
       eslintrc: {
