@@ -1,10 +1,10 @@
 #Frontend
 FROM node:lts-alpine as build-stage
 WORKDIR /app
-COPY ./frontend/package*.json ./
+COPY package*.json ./
 RUN npm install -g pnpm
 RUN pnpm install
-COPY ./frontend .
+COPY . .
 RUN pnpm run build
 
 FROM nginx:latest as production-stage
