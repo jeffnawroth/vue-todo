@@ -1,10 +1,9 @@
 // Utilities
-import type { Types } from 'mongoose'
 import { defineStore } from 'pinia'
-import type { IToDo, IToDoDocument } from 'server/model/ToDo'
+import type { IToDo, IToDoAdd } from '../interfaces/ToDo'
 
 export const useTodoStore = defineStore('todo', () => {
-  const todos = ref<Array<IToDoDocument>>([])
+  const todos = ref<IToDo[]>([])
 
   const completedTodos = computed(() => todos.value.filter(todo => todo.completed))
   const uncompletedTodos = computed(() => todos.value.filter(todo => !todo.completed))
@@ -20,7 +19,7 @@ export const useTodoStore = defineStore('todo', () => {
     }
   }
 
-  async function addTodo(todo: IToDo) {
+  async function addTodo(todo: IToDoAdd) {
     try {
       const response = await fetch('http://localhost:8080/todos', {
         method: 'POST',
@@ -35,7 +34,7 @@ export const useTodoStore = defineStore('todo', () => {
     }
   }
 
-  async function deleteTodo(_id: Types.ObjectId) {
+  async function deleteTodo(_id: string) {
     try {
       await fetch(`http://localhost:8080/todos/${_id}`, {
         method: 'DELETE',
@@ -47,7 +46,7 @@ export const useTodoStore = defineStore('todo', () => {
     }
   }
 
-  async function updateTodo(todo: IToDoDocument) {
+  async function updateTodo(todo: IToDo) {
     try {
       await fetch(`http://localhost:8080/todos/${todo._id}`, {
         method: 'PUT',

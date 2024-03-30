@@ -9,14 +9,9 @@ declare module 'vue' {
   export interface GlobalComponents {
     AppBar: typeof import('./components/AppBar.vue')['default']
     CompletedTodoPanel: typeof import('./components/CompletedTodoPanel.vue')['default']
-    HelloWorld: typeof import('./src/components/HelloWorld.vue')['default']
-    OpenTodos: typeof import('./components/OpenTodos.vue')['default']
     RouterLink: typeof import('vue-router')['RouterLink']
     RouterView: typeof import('vue-router')['RouterView']
     TodoInput: typeof import('./components/TodoInput.vue')['default']
     TodoList: typeof import('./components/TodoList.vue')['default']
-    TodoPanel: typeof import('./components/TodoPanel.vue')['default']
-    TodosList: typeof import('./components/TodosList.vue')['default']
-    UncompletedTodoPanel: typeof import('./components/UncompletedTodoPanel.vue')['default']
   }
 }

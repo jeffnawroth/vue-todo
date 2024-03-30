@@ -1,5 +1,5 @@
 import type { Request, Response } from 'express'
-import { ToDo } from '../model/ToDo.ts'
+import { ToDo } from '../model/ToDo'
 
 // Get all Todos
 async function getTodos(req: Request, res: Response) {

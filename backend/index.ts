@@ -2,7 +2,7 @@ import process from 'node:process'
 import express from 'express'
 import mongoose from 'mongoose'
 import cors from 'cors'
-import todoRoute from './routes/todo.routes.ts'
+import todoRoute from './routes/todo.routes'
 
 const app = express()
 const port = 8080

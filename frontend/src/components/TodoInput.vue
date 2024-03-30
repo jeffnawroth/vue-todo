@@ -1,11 +1,11 @@
 <script setup lang="ts">
-import type { IToDo } from 'server/model/ToDo'
+import type { IToDoAdd } from '../interfaces/ToDo'
 
 // Todo Store
 const { addTodo } = useTodoStore()
 
 // State
-const todo = ref<IToDo>({
+const todo = ref<IToDoAdd>({
   title: '',
   completed: false,
 })

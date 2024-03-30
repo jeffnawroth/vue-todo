@@ -1,8 +1,8 @@
 <script setup lang="ts">
-import type { IToDoDocument } from 'server/model/ToDo'
+import type { IToDo } from '../interfaces/ToDo'
 // Props
 interface Props {
-  todos: IToDoDocument[]
+  todos: IToDo[]
 }
 
 defineProps<Props>()
@@ -16,7 +16,7 @@ const { deleteTodo, updateTodo } = todoStore
   <v-list>
     <v-list-item
       v-for="todo in todos"
-      :key="todo.id"
+      :key="todo._id"
     >
       <template #prepend>
         <v-checkbox-btn
