@@ -12,7 +12,14 @@ services:
     build:
       context: ./backend
       dockerfile: Dockerfile
-    env_file:
-      - ./backend/.env.local
+    environment:
+      - DB_CONNECTION_STRING=mongodb://mongo:27017/todo-app
     ports:
       - "8080:8080"
+    depends_on:
+      - mongo
+
+  mongo: 
+    image: mongo
+    ports:
+      - "27017:27017"
