@@ -1,0 +1,9 @@
+{
+  "name": "vue-todo",
+  "version": "1.0.0",
+  "description": "",
+  "scripts": {
+    "install:all": "pnpm --prefix ./frontend install && pnpm --prefix ./backend install",
+    "update:all": "pnpm --prefix ./frontend update && pnpm --prefix ./backend update"
+  }
+}
